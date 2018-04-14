@@ -20,10 +20,11 @@ salaries <- data.frame(emplyee, salaries_2017, salaries_2018, stringsAsFactors =
 
 # Create a column 'change' that stores each person's change in salary between
 # 2017 and 2018
-
+salaries$change <- salaries_2018 - salaries_2017
 
 # Create a column 'got_raise' that is TRUE if the person got a raise (their
 # salary went up)
+salaries$get_raise <- salaries_2018 > salaries_2017
 
 
 
@@ -35,7 +36,7 @@ salaries <- data.frame(emplyee, salaries_2017, salaries_2018, stringsAsFactors =
 
 
 # How many employees got a raise?
-
+nrow(salaries[salaries$get_raise = TRUE, ])
 
 # What was the dollar value of the highest raise?
 
